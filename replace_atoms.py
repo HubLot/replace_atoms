@@ -124,12 +124,12 @@ def alter_atoms(atoms, indices, resname, atom_name):
     
 
 def reorder(length, insertions, index):
-    for i in xrange(index):
+    for i in xrange(0, index):
         if not i in insertions:
             yield i
     for i in insertions:
         yield i
-    for i in xrange(index + 1, length):
+    for i in xrange(index, length):
         if not i in insertions:
             yield i
 
