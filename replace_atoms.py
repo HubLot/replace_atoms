@@ -94,7 +94,7 @@ def write_gro(title, atoms, box):
     yield title
     yield '{0}\n'.format(len(atoms))
     for atom in atoms:
-        yield ('{resid:>5}{resname:<5}{atom_name:>5}{atomid:<5}'
+        yield ('{resid:>5}{resname:<5}{atom_name:>5}{atomid:>5}'
                 '{x:8.3f}{y:8.3f}{z:8.3f}\n').format(**atom)
     yield box
 
