@@ -144,12 +144,9 @@ def renumber(atoms):
     prev_resid = 0
     for atomid, atom in enumerate(atoms, start=1):
         if atom['resid'] != prev_resid:
-            if prev_resid == 99999:
-                resid = 0
-            else:
-                resid += 1
+            resid += 1
             prev_resid = atom['resid']
-        atom['resid'] = resid
+        atom['resid'] = resid%100000
         atom['atomid'] = atomid%100000
         yield atom
 
